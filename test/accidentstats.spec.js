@@ -19,7 +19,7 @@ describe('Accident Stats', () => {
   it('should append year to the url', () => {
     const req = accidentstats(2016);
     expect(req.url).to.be.eql(accidentstats.URL + '2016')
-  })
+  });
 
   it('should pass through authentication details', () => {
     const req = accidentstats(2016);
@@ -27,4 +27,4 @@ describe('Accident Stats', () => {
     expect(req.qs).to.have.property('app_key', appKey);
   })
 
-})
+});

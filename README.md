@@ -22,7 +22,7 @@ var tfl = require('tfl.api')(appId, appKey);
 ```
 
 * [Accident Stats](https://github.com/easyCZ/tfl.api#accident-stats)
-* Bikepoint (TODO)
+* [BikePoint](#bikepoint)
 * Cycle Super Highway (TODO)
 * [Journey](https://github.com/easyCZ/tfl.api#journey)
 * Line (TODO)
@@ -48,6 +48,23 @@ var tfl = require('tfl.api')(appId, appKey);
 // Get accident stats for the year 2015
 tfl.accidentstats(2015).then(r => console.log(r.body))
 ```
+
+### BikePoint
+Implements API endpoint as supported by [TFL BikePoint](https://api.tfl.gov.uk/).
+
+```javascript
+var bikepoint = require('tfl.api/bikepoint')(appId, appKey);
+
+// - All points
+bikepoint.all().then(r => console.log(r.body));
+
+// - Point by id
+bikepoint.point('BikePoints_1').then(r => console.log(r.body));
+
+// - Search for points
+bikepoint.search('kings cross').then(r => console.log(r.body));
+```
+
 
 ### Journey
 Implements API endpoint as supported by [TFL Journey](https://api.tfl.gov.uk/#Journey)
